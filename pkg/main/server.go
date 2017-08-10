@@ -7,10 +7,10 @@ import (
     "os"
     "time"
 
-    "goserver/pkg/api"
-    "goserver/pkg/log"
-    "goserver/pkg/models"
-    "goserver/pkg/setting"
+    "github.com/rbak1/test-site/pkg/api"
+    "github.com/rbak1/test-site/pkg/log"
+    "github.com/rbak1/test-site/pkg/models"
+    "github.com/rbak1/test-site/pkg/setting"
 )
 
 func NewServer() models.Server {

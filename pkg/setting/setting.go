@@ -3,11 +3,11 @@ package setting
 import (
     "gopkg.in/ini.v1"
 
-    "goserver/pkg/util"
+    "github.com/rbak1/test-site/pkg/util"
 )
 
 const (
-    DEFAULT_CONFIG_PATH string = "src/goserver/pkg/conf/defaults.ini"
+    DEFAULT_CONFIG_PATH string = "conf/defaults.ini"
 )
 
 var (

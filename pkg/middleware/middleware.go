@@ -5,7 +5,7 @@ import (
 
     "gopkg.in/macaron.v1"
 
-    "goserver/pkg/setting"
+    "github.com/rbak1/test-site/pkg/setting"
 )
 
 type Context struct {

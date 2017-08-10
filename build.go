@@ -27,12 +27,7 @@ func main() {
     for _, cmd := range flag.Args() {
         switch cmd {
         case "build":
-            // clean()
             build("main", "./pkg/main/main.go")
-
-        // case "test":
-        //     test("./pkg/...")
-        //     grunt("test")
         }
     }
 }
@@ -59,19 +54,6 @@ func runPrint(cmd string, args ...string) {
         log.Fatal(err)
     }
 }
-
-// func rmr(paths ...string) {
-//     for _, path := range paths {
-//         log.Println("rm -r", path)
-//         os.RemoveAll(path)
-//     }
-// }
-
-// func clean() {
-    // rmr("dist")
-    // rmr("tmp")
-    // rmr(filepath.Join(os.Getenv("GOPATH"), fmt.Sprintf("pkg/%s_%s/github.com/grafana", goos, goarch)))
-// }
 
 func build(binaryName, pkg string) {
     runPrint("go", "version")

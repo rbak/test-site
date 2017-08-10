@@ -176,7 +176,7 @@ func ReadLoggingConfig(modes []string, logsPath string, cfg *ini.File) {
         case "console":
             handler = log15.StreamHandler(os.Stdout, format)
         case "file":
-            fileName := sec.Key("file_name").MustString(filepath.Join(logsPath, "grafana.log"))
+            fileName := sec.Key("file_name").MustString(filepath.Join(logsPath, "testsite.log"))
             os.MkdirAll(filepath.Dir(fileName), os.ModePerm)
             fileHandler := NewFileWriter()
             fileHandler.Filename = fileName

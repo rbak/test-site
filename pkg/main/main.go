@@ -1,8 +1,8 @@
 package main
 
 import (
-    "goserver/pkg/log"
-    "goserver/pkg/setting"
+    "github.com/rbak1/test-site/pkg/log"
+    "github.com/rbak1/test-site/pkg/setting"
 )
 
 var version = "0.0.1"

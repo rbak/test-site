@@ -8,9 +8,9 @@ import (
 
     "gopkg.in/macaron.v1"
 
-    "goserver/pkg/api/static"
-    "goserver/pkg/middleware"
-    "goserver/pkg/setting"
+    "github.com/rbak1/test-site/pkg/api/static"
+    "github.com/rbak1/test-site/pkg/middleware"
+    "github.com/rbak1/test-site/pkg/setting"
 )
 
 // var logger log.Logger
