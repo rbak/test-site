@@ -21,4 +21,13 @@ jobs:
     dockerhub:
       branch: master
       commands:
-        - https://registry.hub.docker.com/u/rbak/test-site/trigger/$DOCKER_HUB_TOKEN/
+        - curl -H "Content-Type: application/json" --data '{"build": true}' -X POST https://registry.hub.docker.com/u/rbak/test-site/trigger/${DOCKER_HUB_TOKEN}/
+
+workflows:
+  build-and-deploy:
+    jobs:
+      - build
+      - deploy:
+        requires:
+          - build
+
