@@ -1,6 +1,6 @@
-# Golang CircleCI 2.0 configuration file
+# CircleCI 2.0 configuration file
+version: 2.0
 
-version: 2
 jobs:
   build:
     docker:
@@ -23,9 +23,8 @@ workflows:
     jobs:
       - build
       - deploy:
-        requires:
-          - build
-        filters:
-          branches:
-            only: master
-
+          requires:
+            - build
+          filters:
+            branches:
+              only: master
