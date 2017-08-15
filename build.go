@@ -57,5 +57,5 @@ func runPrint(cmd string, args ...string) {
 
 func build(binaryName, pkg string) {
     runPrint("go", "version")
-    runPrint("go", "install", "-v", "./pkg/main")
+    runPrint("go", "build", "-o", "./bin/test-site", "-v", "./pkg/main")
 }
