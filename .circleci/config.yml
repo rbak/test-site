@@ -12,6 +12,7 @@ jobs:
       - run: go test -v ./...
 
   deploy:
+    machine: true
     steps:
       - deploy:
         command: |
