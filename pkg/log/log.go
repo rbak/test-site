@@ -1,11 +1,6 @@
-// Copyright 2014 The Gogs Authors. All rights reserved.
-// Use of this source code is governed by a MIT-style
-// license that can be found in the LICENSE file.
-
 package log
 
 import (
-    "fmt"
     "os"
     "path/filepath"
     "strings"
@@ -17,66 +12,22 @@ import (
     "github.com/inconshreveable/log15/term"
 )
 
-var Root log15.Logger
+var Root Logger
 var loggersToClose []DisposableHandler
 
-func init() {
+func Init() {
     loggersToClose = make([]DisposableHandler, 0)
-    Root = log15.Root()
-    Root.SetHandler(log15.DiscardHandler())
+    // Root.SetHandler(log15.DiscardHandler())
+    Root = Logger{
+        log: log15.Root(),
+    }
 }
 
 func New(logger string, ctx ...interface{}) Logger {
     params := append([]interface{}{"logger", logger}, ctx...)
-    return Root.New(params...)
-}
-
-// Logging
-func Trace(format string, v ...interface{}) {
-    message := formatLogging(format, v...)
-    Root.Debug(message)
-}
-
-func Debug(format string, v ...interface{}) {
-    message := formatLogging(format, v...)
-    Root.Debug(message)
-}
-
-func Info(format string, v ...interface{}) {
-    message := formatLogging(format, v...)
-    Root.Info(message)
-}
-
-func Warn(format string, v ...interface{}) {
-    message := formatLogging(format, v...)
-    Root.Warn(message)
-}
-
-func Error(format string, v ...interface{}) {
-    message := formatLogging(format, v...)
-    Root.Error(message)
-}
-
-func Critical(format string, v ...interface{}) {
-    message := formatLogging(format, v...)
-    Root.Crit(message)
-}
-
-func Fatal(format string, v ...interface{}) {
-    message := formatLogging(format, v...)
-    Root.Crit(message)
-    Close()
-    os.Exit(1)
-}
-
-func formatLogging(format string, v ...interface{}) (string) {
-    var message string
-    if len(v) > 0 {
-        message = fmt.Sprintf(format, v)
-    } else {
-        message = format
+    return Logger{
+        log: Root.log.New(params...),
     }
-    return message
 }
 
 func Close() {
@@ -84,6 +35,35 @@ func Close() {
         logger.Close()
     }
     loggersToClose = make([]DisposableHandler, 0)
+}
+
+// Root Logger
+func Trace(format string, v ...interface{}) {
+    Root.Trace(format, v...)
+}
+
+func Debug(format string, v ...interface{}) {
+    Root.Debug(format, v...)
+}
+
+func Info(format string, v ...interface{}) {
+    Root.Info(format, v...)
+}
+
+func Warn(format string, v ...interface{}) {
+    Root.Warn(format, v...)
+}
+
+func Error(format string, v ...interface{}) {
+    Root.Error(format, v...)
+}
+
+func Critical(format string, v ...interface{}) {
+    Root.Critical(format, v...)
+}
+
+func Fatal(format string, v ...interface{}) {
+    Root.Fatal(format, v...)
 }
 
 // func Stack(skip int) string {
@@ -207,7 +187,7 @@ func ReadLoggingConfig(modes []string, logsPath string, cfg *ini.File) {
         handlers = append(handlers, handler)
     }
 
-    Root.SetHandler(log15.MultiHandler(handlers...))
+    Root.log.SetHandler(log15.MultiHandler(handlers...))
 }
 
 func LogFilterHandler(maxLevel log15.Lvl, filters map[string]log15.Lvl, h log15.Handler) log15.Handler {

@@ -31,11 +31,6 @@ type ServerImpl struct {
 }
 
 func (g *ServerImpl) Start() {
-    initRuntime()
-    g.startHttpServer()
-}
-
-func (g *ServerImpl) startHttpServer() {
     m := newMacaron()
     api.Register(m)
 

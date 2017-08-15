@@ -8,19 +8,15 @@ import (
 var version = "0.0.1"
 
 func main() {
-    server := NewServer()
-    server.Start()
-}
+    log.Init()
 
-func initRuntime() {
     err := setting.NewConfigContext()
-
     if err != nil {
         log.Fatal(err.Error())
     }
 
-    logger := log.New("main")
-    logger.Info("Starting server", "version", version)
-
-    // setting.LogConfigurationInfo()
+    server := NewServer()
+    log.Info("Starting server", "version", version)
+    server.Start()
 }
+
