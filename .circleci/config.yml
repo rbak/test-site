@@ -15,8 +15,8 @@ jobs:
     machine: true
     steps:
       - deploy:
-        command: |
-          curl -H "Content-Type: application/json" --data '{"build": true}' -X POST https://registry.hub.docker.com/u/rbak/test-site/trigger/${DOCKER_HUB_TOKEN}/
+          command: |
+            curl -H "Content-Type: application/json" --data '{"build": true}' -X POST https://registry.hub.docker.com/u/rbak/test-site/trigger/${DOCKER_HUB_TOKEN}/
 
 workflows:
   version: 2
