@@ -6,20 +6,67 @@
         <meta name="viewport" content="width=device-width">
         <meta name="theme-color" content="#000">
 
-        <title>Test Site - Error</title>
-        <base href='{{.AppSubUrl}}/'>
-        <link href='public/css/base.css' rel='stylesheet' type='text/css'>
+        <title>Ryan Bak</title>
+        <base href='./'>
+        <link rel='stylesheet' href='base.css' type='text/css'>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="icon" type="image/png" href="public/img/icon.png">
     </head>
-    <body>
-        <div class="container">
-            <div class="m-3">
-                <h1>
-                    Server side error
-                </h1>
+    <body ng-cloak class="grid">
+        <div class="header">
+            <div class="container">
+                <h1>Ryan Bak</h1>
+                <div class="float-left">
+                    Software Engineer, Denver CO
+                </div>
+                <nav class="float-right header-nav">
+                    <button class="dropdown display-small">
+                        <i class="fa fa-bars" style="font-size:20px;color:white"></i>
+                        <div class="dropdown-content">
+                            <ul class="list-style-none align-right">
+                                <li><a href="/index.html">Home</a></li>
+                                <li><a href="/portfolio.html">Portfolio</a></li>
+                                <li><a href="/demos.html">Demos</a></li>
+                                <li><a href="/resume.html">Resume</a></li>
+                                <li><a href="/contace.html">Contact Me</a></li>
+                            </ul>
+                        </div>
+                    </button>
+                    <ul class="list-style-none display-large">
+                        <li class="float-left"><a href="/index.html">Home</a></li>
+                        <li class="float-left ml-2"><a href="/portfolio.html">Portfolio</a></li>
+                        <li class="float-left ml-2"><a href="/demos.html">Demos</a></li>
+                        <li class="float-left ml-2"><a href="/resume.html">Resume</a></li>
+                        <li class="float-left ml-2"><a href="/contace.html">Contact Me</a></li>
+                    </ul>
+                </nav>
             </div>
-            <h4>[[.Title]]</h4>
-            <pre>[[.ErrorMsg]]</pre>
+        </div>
+        <div class="content py-3">
+            <div class="container align-center">
+                <div class="py-3"></div>
+                <div>
+                    <h2>404 Error</h2>
+                    <p class="text-mid py-2">The site is currently under contruction, and may be missing some pages.</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="container">
+                <div class="float-left p-3">
+                    © 2017 Ryan Bak
+                </div>
+                <div class="float-right p-3">
+                    <ul class="list-style-none">
+                        <li class="float-left ml-2"><a class="" href="https://www.linkedin.com/in/ryanbak/">
+                            <i class="fa fa-linkedin-square" style="font-size:20px;color:white"></i>
+                        </a></li>
+                        <li class="float-left ml-2"><a class="" href="https://github.com/rbak1">
+                            <i class="fa fa-github" style="font-size:20px;color:white"></i>
+                        </a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </body>
 </html>

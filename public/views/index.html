@@ -6,57 +6,76 @@
         <meta name="viewport" content="width=device-width">
         <meta name="theme-color" content="#000">
 
-        <title>Test Site</title>
-        <base href='{{.AppSubUrl}}/'>
+        <title>Ryan Bak</title>
+        <base href='./'>
         <link href='public/css/base.css' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="icon" type="image/png" href="public/img/icon.png">
     </head>
-    <body ng-cloak>
-        <div class="header-wrapper py-3">
-            <div class="container px-3 clearfix">
-                <nav class="float-left">
-                    <ul class="list-style-none">
-                        <li class="float-left ml-3"><a class="header-navlink" href="">Home</a></li>
-                        <li class="float-left ml-3"><a class="header-navlink" href="">Application</a></li>
-                        <li class="float-left ml-3"><a class="header-navlink" href="">Architecture</a></li>
-                        <li class="float-left ml-3"><a class="header-navlink" href="">Deployment</a></li>
-                        <li class="float-left ml-3"><a class="header-navlink" href="">Contact Me</a></li>
+    <body ng-cloak class="grid">
+        <div class="header">
+            <div class="container">
+                <h1>Ryan Bak</h1>
+                <div class="float-left">
+                    Software Engineer, Denver CO
+                </div>
+                <nav class="float-right header-nav">
+                    <button class="dropdown display-small">
+                        <i class="fa fa-bars" style="font-size:20px;color:white"></i>
+                        <div class="dropdown-content">
+                            <ul class="list-style-none align-right">
+                                <li><a href="/index.html">Home</a></li>
+                                <li><a href="/portfolio.html">Portfolio</a></li>
+                                <li><a href="/demos.html">Demos</a></li>
+                                <li><a href="/resume.html">Resume</a></li>
+                                <li><a href="/contace.html">Contact Me</a></li>
+                            </ul>
+                        </div>
+                    </button>
+                    <ul class="list-style-none display-large">
+                        <li class="float-left"><a href="/index.html">Home</a></li>
+                        <li class="float-left ml-2"><a href="/portfolio.html">Portfolio</a></li>
+                        <li class="float-left ml-2"><a href="/demos.html">Demos</a></li>
+                        <li class="float-left ml-2"><a href="/resume.html">Resume</a></li>
+                        <li class="float-left ml-2"><a href="/contace.html">Contact Me</a></li>
                     </ul>
                 </nav>
-                <div class="float-right">
-                    <a class="header-navlink" href="">Sign In</a>
+            </div>
+        </div>
+        <div class="content py-3">
+            <div class="container two-column align-center">
+                <div>
+                    <img src="public/img/profile-pic.jpg" alt="some text" width=380 height=500>
+                </div>
+                <div>
+                    <div class="py-3"></div>
+                    <div class="pb-3">
+                        <h2>About Me</h2>
+                        <p class="text-mid py-2">I am software engineer with an interest in Cloud and Automation technologies</p>
+                    </div>
+                    <div>
+                        <h2>Recent Work</h2>
+                        <p class="text-mid py-2">I currently work as a DevOps engineer for Charter Communications where I develop and run a private cloud using OpenStack. My focus is using Monasca to provide monitoring as a service, as well as automating incident recovery and deployment of cloud services using Puppet and Ansible.</p>
+                    </div>
+                    <div class="py-3">
+                        <a class="button-link" href="public/files/resume" download="resume_ryan_bak.pdf">Download Resume</a>
+                    </div>
                 </div>
             </div>
         </div>
-        <div ng-view class="container">
-            <div class="m-3">
-                This is a test site designed for me to test various web, cloud, and deployment technologies.  Not everything on this site is guaranteed to work at any given time as I test new solutions. Test.
-            </div>
-        </div>
-        <div class="footer-wrapper">
-            <div class="container flex">
-                <div class="footer-column">
-                    <h4 class="mb-3">Features</h4>
-                    <ul class="list-style-none">
-                        <li class="muted-link mb-2">Filler</li>
-                        <li class="muted-link mb-2">Filler</li>
-                        <li class="muted-link mb-2">Filler</li>
-                    </ul>
+        <div class="footer">
+            <div class="container">
+                <div class="float-left p-3">
+                    © 2017 Ryan Bak
                 </div>
-                <div class="footer-column">
-                    <h4 class="mb-3">Platform</h4>
+                <div class="float-right p-3">
                     <ul class="list-style-none">
-                        <li class="muted-link mb-2">Filler</li>
-                        <li class="muted-link mb-2">Filler</li>
-                        <li class="muted-link mb-2">Filler</li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h4 class="mb-3">Resources</h4>
-                    <ul class="list-style-none">
-                        <li class="muted-link mb-2">Filler</li>
-                        <li class="muted-link mb-2">Filler</li>
-                        <li class="muted-link mb-2">Filler</li>
+                        <li class="float-left ml-2"><a class="" href="https://www.linkedin.com/in/ryanbak/">
+                            <i class="fa fa-linkedin-square" style="font-size:20px;color:white"></i>
+                        </a></li>
+                        <li class="float-left ml-2"><a class="" href="https://github.com/rbak1">
+                            <i class="fa fa-github" style="font-size:20px;color:white"></i>
+                        </a></li>
                     </ul>
                 </div>
             </div>
