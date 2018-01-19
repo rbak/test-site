@@ -10,7 +10,7 @@ import (
 
     "gopkg.in/ini.v1"
 
-    "github.com/rbak1/test-site/pkg/log"
+    "github.com/rbak/test-site/pkg/log"
 )
 
 func setHomePath() {

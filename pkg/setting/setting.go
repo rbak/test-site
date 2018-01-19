@@ -3,7 +3,7 @@ package setting
 import (
     "gopkg.in/ini.v1"
 
-    "github.com/rbak1/test-site/pkg/util"
+    "github.com/rbak/test-site/pkg/util"
 )
 
 const (

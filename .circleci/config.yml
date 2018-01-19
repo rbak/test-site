@@ -5,7 +5,7 @@ jobs:
   build:
     docker:
       - image: circleci/golang:1.8
-    working_directory: /go/src/github.com/rbak1/test-site
+    working_directory: /go/src/github.com/rbak/test-site
     steps:
       - checkout
       - run: go get -v -t -d ./...

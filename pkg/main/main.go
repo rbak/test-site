@@ -1,8 +1,8 @@
 package main
 
 import (
-    "github.com/rbak1/test-site/pkg/log"
-    "github.com/rbak1/test-site/pkg/setting"
+    "github.com/rbak/test-site/pkg/log"
+    "github.com/rbak/test-site/pkg/setting"
 )
 
 var version = "0.0.1"

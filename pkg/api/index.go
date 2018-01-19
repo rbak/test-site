@@ -1,9 +1,9 @@
 package api
 
 import (
-    "github.com/rbak1/test-site/pkg/api/dtos"
-    "github.com/rbak1/test-site/pkg/middleware"
-    "github.com/rbak1/test-site/pkg/setting"
+    "github.com/rbak/test-site/pkg/api/dtos"
+    "github.com/rbak/test-site/pkg/middleware"
+    "github.com/rbak/test-site/pkg/setting"
 )
 
 func setIndexViewData(c *middleware.Context) (*dtos.IndexViewData, error) {
